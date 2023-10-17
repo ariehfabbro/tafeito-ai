@@ -11,7 +11,8 @@ import {
     FormControl, InputLabel,
     FilledInput, InputAdornment, IconButton, Typography
 } from '@mui/material';
-import { VisibilityOff, Visibility } from '@mui/icons-material'
+import { VisibilityOff, Visibility } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -20,6 +21,8 @@ const Login = () => {
     const [password, setPassword] = useState<string | null>(null);
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (username !== null && username !== '' &&
@@ -59,7 +62,7 @@ const Login = () => {
                 } else if (data.responseStatus === 400) {
                     setErrorMessage('Requisição inválida!')
                 } else if (data.responseStatus === 200) {
-                    console.log('Requisição válida')
+                    navigate('/tarefas');
                 }
             })
             .catch(error => setErrorMessage('Erro no servidor, tente novamente em alguns minutos!'));
