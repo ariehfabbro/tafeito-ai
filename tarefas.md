@@ -7,5 +7,5 @@ Tarefas
 [ok] - Conectar o login com o backend
 
 [ok] - Realizar a navegação entre tela de login para tela de tarefa
-- Realizar a navegação entre tela de tarefa para tela de login
-- Realizar gestão do estado de logado ou não na aplicação
+[ok] - Realizar a navegação entre tela de tarefa para tela de login
+[ok] - Realizar gestão do estado de logado ou não na aplicação
