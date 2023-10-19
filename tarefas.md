@@ -9,3 +9,5 @@ Tarefas
 [ok] - Realizar a navegação entre tela de login para tela de tarefa
 [ok] - Realizar a navegação entre tela de tarefa para tela de login
 [ok] - Realizar gestão do estado de logado ou não na aplicação
+
+[ok] - Personalizar a barra de navegação com o nome do usuário
