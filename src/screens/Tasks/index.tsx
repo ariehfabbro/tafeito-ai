@@ -34,7 +34,7 @@ const Tasks = () => {
   const logout = () => {
     setAnchorElUser(null);
     setToken(null);
-    navigate("/login", { replace: true });
+    navigate("/");
   }
 
   return (
