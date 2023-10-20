@@ -1,22 +1,29 @@
 import { Box, Typography } from "@mui/material";
 import TaskInput from "../TaskInput";
+
 import { CustomizedSectionBox } from "./styles";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import { url_categorias } from "../../utils/api";
 import { Categoria } from "../../utils/model";
-import axios from "axios";
+
 import { MainProps } from "./Main";
 
 const Main = (props: MainProps) => {
   const { categorias } = props;
 
-  const [selectedTaskInput, setSelectedTaskInput] = useState<string | null>(null);
+  const [selectedTaskInput, setSelectedTaskInput] = useState<string | null>(
+    null
+  );
 
   const renderCategoriaSection = (categoria_item: Categoria) => {
     return (
-      <CustomizedSectionBox key={categoria_item.id}>
-        <Typography variant="h2"> {categoria_item.descricao} </Typography>
+      <CustomizedSectionBox key={categoria_item.id} pt={2} pb={1}>
+        <Typography variant="h2" sx={{
+          fontSize: '2rem',
+          marginBottom: '8px'
+        }}> {categoria_item.descricao} </Typography>
         <div>TODO: Listar Tarefas {categoria_item.descricao}</div>
         {selectedTaskInput === null || selectedTaskInput === categoria_item.descricao ? (
           <TaskInput
@@ -31,11 +38,19 @@ const Main = (props: MainProps) => {
   };
 
   return (
-    <Box display='flex' flexWrap={'wrap'} sx={{
-      margin: '8px 16px '
-    }}>
+    <Box
+      display="flex"
+      flexWrap={"wrap"}
+      sx={{
+        textAlign: 'center',
+        maxWidth: '720px',
+        margin: "0 auto",
+      }}
+    >
       <CustomizedSectionBox>
-        <Typography variant='h1'>Suas tarefas</Typography>
+        <Typography variant="h1" sx={{
+          fontSize: '3rem'
+        }}> Suas tarefas </Typography>
       </CustomizedSectionBox>
       {categorias.map((categoria) => renderCategoriaSection(categoria))}
     </Box>
