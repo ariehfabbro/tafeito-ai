@@ -40,8 +40,8 @@ const TaskTags = (props: TaskTagsProps) => {
           "Content-Type": "application/json",
         },
       });
-      setRefectchTaskStatus(refetchtaskStatus + 1);   
-    } catch (err) {console.error('erro ao adicionar tag')};
+      setRefectchTaskStatus(refetchtaskStatus + 1);
+    } catch (err) { console.error('erro ao adicionar tag') };
     setIsAdding(false);
   };
 
@@ -56,8 +56,10 @@ const TaskTags = (props: TaskTagsProps) => {
           "Content-Type": "application/json",
         },
       });
-      setRefectchTaskStatus(refetchtaskStatus + 1);   
-    } catch (err) {console.error('erro ao adicionar tag')};
+      setRefectchTaskStatus(refetchtaskStatus + 1);
+    } catch (err) {
+      console.error("erro ao adicionar tag");
+    }
     setIsAdding(false);
 
   };
@@ -76,10 +78,16 @@ const TaskTags = (props: TaskTagsProps) => {
     return <Input autoFocus onKeyDown={checkKeyPressed} />;
   };
   return (
-    <Box display={"flex"} px={1} pb={2} alignItems={"center"}>
+    <Box display={"flex"} px={1} pb={2} alignItems={"center"} flexWrap={"wrap"}>
       {task.etiquetas.map((tag) => (
-        <Box px={1}>
-          <Chip key={tag} label={tag} size="small" variant="outlined" onDelete={() => removeTaskTag(tag)}/>
+        <Box pr={1} pb={1}>
+          <Chip
+            color="secondary"
+            key={tag}
+            label={tag}
+            size="small"
+            onDelete={() => removeTaskTag(tag)}
+          />
         </Box>
       ))}
 
