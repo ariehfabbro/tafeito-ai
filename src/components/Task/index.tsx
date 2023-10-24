@@ -2,8 +2,9 @@ import axios from "axios";
 
 import { Box } from "@mui/material";
 import { useState } from "react";
-import { format, formatDistance, formatRelative, subDays,parseISO } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 
+import TaskTags from "../TaskTags";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -27,7 +28,7 @@ const Task = (props: TaskProps) => {
 
   const [openedDialog, setOpenedDialog] = useState(false);
   const [checked, setChecked] = useState(task.data_conclusao ? [task.id] : [0]);
-  
+
   const { enqueueSnackbar } = useSnackbar();
   const labelId = `checkbox-list-label-${task.id}`;
 
@@ -151,10 +152,11 @@ const Task = (props: TaskProps) => {
               inputProps={{ "aria-labelledby": labelId }}
             />
           </ListItemIcon>
-          <ListItemText id={labelId} primary={task.descricao} secondary={renderFinishedText()}/>
+          <ListItemText id={labelId} primary={task.descricao} secondary={renderFinishedText()} />
 
         </ListItemButton>
       </ListItem>
+      <TaskTags task={task}/>
       <DeleteTaskDialog
         task={task}
         openedDialog={openedDialog}
