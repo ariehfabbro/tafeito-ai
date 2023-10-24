@@ -39,4 +39,4 @@ PR - Controlar o status das tarefas
 PR - Implementar a gestão das etiquetas
 [x] - visualizar etiquetas nas tarefas
 [x] - permitir adicionar etiquetas
-[] - permitir deletar etiquetas
+[x] - permitir deletar etiquetas
