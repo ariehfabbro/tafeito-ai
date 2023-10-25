@@ -43,4 +43,4 @@ PR - Implementar a gestão das etiquetas
 
 PR - Integrar o chatgpt à nossa aplicação
 [x] - Adiciona a estimativa da tarefa
-[] - Adicionar o pop up para descrever o projeto e gerar tarefas a partir da descrição
+[x] - Adicionar o pop up para descrever o projeto e gerar tarefas a partir da descrição
