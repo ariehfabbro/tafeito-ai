@@ -40,3 +40,7 @@ PR - Implementar a gestão das etiquetas
 [x] - visualizar etiquetas nas tarefas
 [x] - permitir adicionar etiquetas
 [x] - permitir deletar etiquetas
+
+PR - Integrar o chatgpt à nossa aplicação
+[x] - Adiciona a estimativa da tarefa
+[x] - Adicionar o pop up para descrever o projeto e gerar tarefas a partir da descrição
