@@ -46,4 +46,4 @@ PR - Integrar o chatgpt à nossa aplicação
 [x] - Adicionar o pop up para descrever o projeto e gerar tarefas a partir da descrição
 
 PR - Melhorar a experiência de deleção
-[] - Ao invés de usar um dialog para confirmaar, usar uma estrategia opt-out, ou seja, permitir o cliente desfazer a ação de deleção.
+[X] - Ao invés de usar um dialog para confirmaar, usar uma estrategia opt-out, ou seja, permitir o cliente desfazer a ação de deleção.
