@@ -1,7 +1,7 @@
 import { Box, Chip, IconButton, Tooltip, Input } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
-import { api } from '../../provider/customAxios';
+import { api } from "../../provider/customAxios";
 
 import { TaskTagsProps } from "./TaskTags";
 import { url_add_task_tag } from "../../utils/api";
@@ -35,13 +35,11 @@ const TaskTags = (props: TaskTagsProps) => {
       .replace(":id", taskId.toString())
       .replace(":tag", tag);
     try {
-      await api.post(custom_task_tag_url, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      await api.post(custom_task_tag_url);
       setRefectchTaskStatus(refetchtaskStatus + 1);
-    } catch (err) { console.error('erro ao adicionar tag') };
+    } catch (err) {
+      console.error("erro ao adicionar tag");
+    }
     setIsAdding(false);
   };
 
@@ -51,22 +49,16 @@ const TaskTags = (props: TaskTagsProps) => {
       .replace(":id", taskId.toString())
       .replace(":tag", tag);
     try {
-      await api.delete(custom_task_tag_url, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      await api.delete(custom_task_tag_url);
       setRefectchTaskStatus(refetchtaskStatus + 1);
     } catch (err) {
       console.error("erro ao adicionar tag");
     }
     setIsAdding(false);
-
   };
 
   const checkKeyPressed = (e: any) => {
     if (e.keyCode == 13) {
-      console.log("ENTER", e.target.value);
       addTaskTag(e.target.value);
     }
     if (e.keyCode == 27) {
@@ -90,7 +82,6 @@ const TaskTags = (props: TaskTagsProps) => {
           />
         </Box>
       ))}
-
       {isAdding === false ? renderAddButton() : renderTextInput()}
     </Box>
   );
